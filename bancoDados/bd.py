@@ -16,11 +16,11 @@ def Cadastrar(dados):
     return True
 
 def Listar():
-    cursor.execute("SELECT * FROM projetosefaz.pessoa ORDER BY idPessoa")
+    cursor.execute("SELECT * FROM projeto.pessoa ORDER BY idPessoa")
     return cursor.fetchall()
 
 def Atualizar(dados):
-    cursor.execute("UPDATE `projetosefaz`.`pessoa` SET `Nome` = %s, `Sobrenome` = %s, `Nascimento` = %s, `Logradouro` = %s,\
+    cursor.execute("UPDATE `projeto`.`pessoa` SET `Nome` = %s, `Sobrenome` = %s, `Nascimento` = %s, `Logradouro` = %s,\
     `Numero` = %s, `Bairro` = %s, `Cidade` = %s, `Estado` = %s, `CEP` = %s, `Sexo` = %s\
     WHERE(`idPessoa` = %s)", dados)
     conexao.commit()
